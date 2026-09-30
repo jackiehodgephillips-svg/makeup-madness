@@ -1,0 +1,67 @@
+EMMA'S PRETTY MOMMY — GO-LIVE GUIDE
+(about 20 minutes, done once)
+
+WHAT'S IN THIS FOLDER
+  index.html            Homepage (services, gallery, reel, booking)
+  makeup_madness.html   Weekly voting bracket
+  config.js             THE ONLY FILE YOU EDIT (email, links, backend URL)
+  assets/               Photos + video
+  backend/google_apps_script.gs   The code for your Google Sheet (bookings, votes, email list)
+
+--------------------------------------------------------------
+STEP 1 — CREATE YOUR GOOGLE SHEET BACKEND
+  1. Go to sheets.google.com and create a blank sheet. Name it "EPM Website".
+  2. Menu: Extensions > Apps Script.
+  3. Delete everything in the editor. Paste ALL of backend/google_apps_script.gs. Click Save.
+  4. In the function dropdown at the top, pick "setup" and click Run.
+     Google asks for permission: click Review permissions > your account >
+     Advanced > Go to project > Allow. (It's your own script.)
+  5. Back in the Sheet you now have 4 tabs: Matches, Votes, Subscribers, Bookings.
+
+STEP 2 — PUBLISH IT
+  1. In Apps Script: Deploy > New deployment > gear icon > Web app.
+  2. Execute as: Me.   Who has access: Anyone.
+  3. Click Deploy. Copy the Web app URL (ends in /exec).
+
+STEP 3 — FILL IN config.js
+  Open config.js in any text editor (Notepad / TextEdit) and replace the [BRACKETS]:
+  - email, backendUrl (the /exec link), social links, affiliate links.
+  Anything left in [BRACKETS] stays hidden, so the site never shows a broken button.
+
+STEP 4 — UPLOAD TO IONOS
+  Upload everything EXCEPT the backend folder to your site's main folder
+  (IONOS: Hosting > Webspace, or via GitHub if you use Deploy Now).
+  Keep the folder layout exactly the same.
+
+STEP 5 — TEST
+  Send yourself a booking request (you get an email + a new row in Bookings).
+  Cast one vote (new row in Votes). Then delete your test rows.
+
+--------------------------------------------------------------
+WEEKLY MAKEUP MADNESS ROUTINE (Matches tab, 2 minutes)
+  When the new episode drops:
+    - Set that match's status to: open
+    - Paste the YouTube video link in video_url
+    - Post a YouTube Community poll with the same two names
+  When voting closes:
+    - Type the YouTube poll vote counts into youtube_votes_a / youtube_votes_b
+      (website + YouTube are added together automatically)
+    - Set status to: closed   and type the winner's name exactly in winner
+    - Winners move up the bracket on their own. Open the next match.
+  Only ONE match should be "open" at a time.
+
+YOUR EMAIL LIST
+  Everyone who ticks "email me" lands in the Subscribers tab.
+  Export it to Mailchimp / Beehiiv / Kit to send the weekly matchup email.
+
+TRACKING LINKS (so you know which ad brought the client)
+  Instagram bio:    yoursite.com/?utm_source=instagram
+  Prom Meta ad:     yoursite.com/?service=prom&utm_source=meta
+  WeddingWire:      yoursite.com/?service=bridal&utm_source=weddingwire
+  The Knot:         yoursite.com/?service=bridal&utm_source=theknot
+  Pinterest:        yoursite.com/?service=bridal&utm_source=pinterest
+
+STILL TO DO
+  - Replace assets/pink_fantasy_event.jpg and assets/rhinestone_floral.jpg with
+    full-size originals (same file names). The current ones are small and look blurry.
+  - Add cancellation / deposit / privacy policy wording when ready.
