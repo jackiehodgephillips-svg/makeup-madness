@@ -2,7 +2,9 @@
 
 Live business site: portfolio, booking requests, and the weekly Makeup Madness voting bracket.
 
-- `index.html` — homepage (services, gallery, reel, booking)
+- `index.html` — home
+- `services.html`, `portfolio.html`, `book.html`, `brands.html` — site pages
+- `site.js` — shared page behavior (booking form, links)
 - `makeup_madness.html` — weekly voting bracket (website votes + YouTube poll totals)
 - `config.js` — email, links, backend URL (only file that needs editing)
 - `backend/google_apps_script.gs` — Google Sheets backend for bookings, votes, and the email list
